@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="com.henrikstabell.scriptloader">
+        <HostList>
+
+            <Host Name="AUDT" Port="8096" />
+
+        </HostList>
+    </Extension>
+</ExtensionList>
