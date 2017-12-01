@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest Version="5.0" ExtensionBundleId="com.henrikstabell.scriptloader" ExtensionBundleVersion="1.0.1" ExtensionBundleName="Script Loader"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ExtensionManifest Version="5.0" ExtensionBundleId="com.henrikstabell.scriptloader" ExtensionBundleVersion="1.0.1" ExtensionBundleName="Script Loader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ExtensionList>
-		<Extension Id="com.henrikstabell.scriptloader" Version="1.0.1" />
+		<Extension Id="com.henrikstabell.scriptloader" Version="1.0.2" />
 	</ExtensionList>
 	<ExecutionEnvironment>
 		<HostList>
-			<Host Name="AUDT" Version="[8.0,12.0]" />
+			<Host Name="AUDT" Version="[8.0, 12.0]" />
 		</HostList>
 		<LocaleList>
 			<Locale Code="All" />
@@ -29,17 +28,15 @@
 					<Menu>Script Loader</Menu>
 					<Geometry>
 						<Size>
-							<Height>100</Height>
-							<Width>70</Width>
+							<MaxSize>
+								<Height>100</Height>
+								<Width>70</Width>
+							</MaxSize>
+							<MinSize>
+								<Height>100</Height>
+								<Width>70</Width>
+							</MinSize>
 						</Size>
-						<MaxSize>
-							<Height>100</Height>
-							<Width>70</Width>
-						</MaxSize>
-						<MinSize>
-							<Height>100</Height>
-							<Width>70</Width>
-						</MinSize>
 					</Geometry>
 				</UI>
 			</DispatchInfo>

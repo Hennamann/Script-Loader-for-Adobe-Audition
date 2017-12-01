@@ -2,9 +2,7 @@
 <ExtensionList>
     <Extension Id="com.henrikstabell.scriptloader">
         <HostList>
-
             <Host Name="AUDT" Port="8096" />
-
         </HostList>
     </Extension>
 </ExtensionList>

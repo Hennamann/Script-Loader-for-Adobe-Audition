@@ -1,11 +1,17 @@
+/*
+ * Written by Ole Henrik Stabell - ole@henrikstabell.com
+ */
+
 var cs = new CSInterface();
 console.log(cs);
 var hostEnv = cs.getHostEnvironment();
 
+// Fires when the dom is ready.
 document.addEventListener("DOMContentLoaded", function (event) {
     // Perform CSS updates based on users selections
     var appSkin = hostEnv.appSkinInfo.appBarBackgroundColor;
 
+    // DEBUG: In case Audition reports incorrect or out of spectrum colors.
     console.log(appSkin.color.red + " " + appSkin.color.green + " " + appSkin.color.blue);
     var red = Math.round(appSkin.color.red);
     var green = Math.round(appSkin.color.green);
@@ -14,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     document.body.style.background = colorRGB;
 
+    // Modify stylesheet depending on RGB values reported by Audition
     if (appSkin.color.red == "74.9955") {
         swapCSS('dark');
     } else {
@@ -25,10 +32,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 function themeChangedEventListener(event) {
+    // Change background color on Audition preference change
     console.log('background color change detected.');
     changeThemeColor();
 }
 
+// Swap the actual CSS files depending on Audition color theme
 function swapCSS(cssfilename) {
     if ($("#ccstyleTheme").length)
         $("#ccstyleTheme").remove();
@@ -37,6 +46,7 @@ function swapCSS(cssfilename) {
         cssfilename + '.css" rel="stylesheet" type="text/css" />');
 }
 
+// Generate RGB colors from Audition data.
 function changeThemeColor() {
     var hostEnv = cs.getHostEnvironment();
     var UIColorObj = new UIColor();
@@ -50,6 +60,7 @@ function changeThemeColor() {
 
     document.body.style.background = colorRGB;
 
+    // Modify stylesheet depending on RGB values reported by Audition
     if (UIColorObj.color.red == "74.9955") {
         swapCSS('dark');
     } else {
@@ -57,6 +68,7 @@ function changeThemeColor() {
     }
 }
 
+// Invoke extendscript commands using a JS function (saves time when programming.)
 function invokeCommand(command) {
     var cs = new CSInterface();
     cs.evalScript('app.invokeCommand(Application.' + command + ')');
